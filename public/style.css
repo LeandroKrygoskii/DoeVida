@@ -1,0 +1,181 @@
+/*GLOBAL*/
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin:0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    font-family: 'Sriracha', cursive ;
+
+    background-color: #f9f9f9;
+}
+
+h1, h2{
+    color: #030101ee;
+}
+
+
+header,main,footer{
+    text-align: center;
+}
+
+.logo{
+       width: 300px;
+       margin: 60px 0;
+}
+
+header, .forms, main{
+    
+    margin:0 auto 70px;
+    
+    width: 90%;
+    max-width: 500px;
+    /* todo esse codigo pode ser acoplado em apenas um "margin" , colocando os valores em sentido horário
+    margin-bottom: 70px;
+    
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+
+/*Tituloss*/
+header h1, main h2{
+    margin-bottom: 70px;
+}
+main h2 span{
+
+    color: #ff4f4f;
+}
+
+header button{
+    padding:  9px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #ff4f4f;
+    color: white;
+
+    font-weight: bold;
+}
+
+section.forms{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 45px;
+    align-items: center;
+
+    background-color: #ff4f4f;
+
+    border-radius: 6px;
+    padding: 16px 64px;
+}
+.forms h2{
+    text-align: right;
+    color:#f9f9f9;
+    font-size: 18px;
+}
+
+form input, form button{
+    width: 100%;
+
+   
+    margin-bottom: 4px;
+ 
+    
+ 
+    /* Da pra ser feito assim, ou fazendo todos em apenas um padding
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+    */ 
+
+    padding: 9px 16px;
+    border-radius: 4px;
+    
+    border:1px white solid;
+
+}
+form input{
+    color: #eee;
+    background-color: transparent;
+    
+    
+}
+form input::placeholder{
+    color:#ffffffaa;
+}
+form button{
+    font-weight: bold;
+}
+
+
+
+main .donors{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ; /*uma fração das colunas... sao 4 colunas usando um fr posso dividila em 4 partes iguais*/
+}
+
+.blood{
+    color:#ff4f4f;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    position: relative;
+}
+
+.blood::before{
+    content: "";
+
+    background-color: #ff4f4f11;
+    width: 40px;
+    height:40px;
+    
+    
+    position: absolute; /*position absolute cria um novo contexto para o elemento, uma nova camada*/
+
+    /*fazer a gotinha*/
+    border-radius: 50%;
+    border-top-left-radius: 0;
+
+    transform: rotate(+45deg);
+}
+
+.donor p{
+    margin-top: 24px;
+    margin-bottom: 64px;
+    font-size: 14px;
+
+
+}
+
+
+footer{
+    margin-top: auto;
+    padding: 16px;
+
+    border: 1px solid #eee;
+}
+
+/*Funcionalidades com JavaScript // Eventos*/
+
+
+section.forms{
+    transition: all 400ms;
+}
+
+section.forms.hide{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: -70px;
+}
